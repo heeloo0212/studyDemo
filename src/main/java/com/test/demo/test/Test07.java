@@ -1,8 +1,13 @@
 package com.test.demo.test;
 
+import com.alibaba.fastjson.JSONObject;
+import com.test.demo.web.redisPubAndSub.SendSocketMsg;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * <p>
@@ -14,17 +19,14 @@ import java.text.NumberFormat;
  */
 public class Test07 {
 
-    public static void main(String[] args) {
-        BigDecimal v = new BigDecimal(25600);
-        BigDecimal b = new BigDecimal(28000);
-        BigDecimal divide = v.divide(b, 2, BigDecimal.ROUND_HALF_UP);
-        System.out.println(divide);
-        NumberFormat numberFormat = NumberFormat.getPercentInstance();
-        numberFormat.setMaximumFractionDigits(2);
-        String format = numberFormat.format(divide.doubleValue());
-        System.out.println(format);
+    public static void main(String[] args) throws Exception{
+        Long id = System.currentTimeMillis();
+        System.out.println(id);
+        Long t = id>>10;
+        int i = Long.hashCode(t);
+        System.out.println(i);
+        System.out.println(t);
 
-        System.out.println(new BigDecimal(25600).divide(b,2, RoundingMode.HALF_UP).multiply(BigDecimal.valueOf(100)));
     }
 
 }

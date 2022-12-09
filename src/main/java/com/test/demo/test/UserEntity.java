@@ -10,6 +10,7 @@ public class UserEntity{
         UserInfo userInfo = new UserInfo("lyh");
         UserInfo userInfo1 = new UserInfo("24","female");
         UserInfo userInfo2 = new UserInfo("lyh","24","female");
+
     }
 }
 
@@ -20,6 +21,10 @@ class UserInfo {
     private String age;
 
     private String sex;
+
+    public UserInfo getUserInfo(String name){
+        return this;
+    }
 
     public UserInfo(String name){
         this.name = name;

@@ -40,7 +40,7 @@ public class SearcherTest {
         // 2、查询
         String ip = new String();
         try {
-            ip = "1.2.3.4";
+            ip = "116.28.65.102";
             long sTime = System.nanoTime();
             String region = searcher.search(ip);
             long cost = TimeUnit.NANOSECONDS.toMicros((long) (System.nanoTime() - sTime));
